@@ -158,13 +158,13 @@ body::before {
   animation: fadeInUp 0.3s ease-out;
 }
 
-/* User messages (right side, blue bubbles) */
+/* User messages (right side, red bubbles) */
 .message.user {
   align-items: flex-end;
 }
 
 .message.user .message-bubble {
-  background: #007aff;
+  background: #ff003b;
   color: white;
   margin-left: 60px;
   border-radius: 18px 18px 4px 18px;
@@ -191,6 +191,79 @@ body::before {
   word-wrap: break-word;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   position: relative;
+}
+
+/* Rich text formatting within message bubbles */
+.message-bubble a {
+  color: #ff003b;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.message-bubble a:hover {
+  color: #d81b60;
+  text-decoration: none;
+}
+
+/* Special styling for product links */
+.message-bubble a.product-link {
+  background: linear-gradient(135deg, #ff003b 0%, #e91e63 100%);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin: 1px 2px;
+  box-shadow: 0 2px 4px rgba(255, 0, 59, 0.3);
+}
+
+.message-bubble a.product-link:hover {
+  background: linear-gradient(135deg, #e91e63 0%, #ff003b 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 0, 59, 0.4);
+  color: white;
+}
+
+/* Product links in user messages */
+.message.user .message-bubble a.product-link {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.3) 100%);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.message.user .message-bubble a.product-link:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.4) 100%);
+  transform: translateY(-1px);
+}
+
+/* Bold text styling */
+.message-bubble strong {
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Italic text styling */
+.message-bubble em {
+  font-style: italic;
+  color: inherit;
+}
+
+/* Emoji styling */
+.message-bubble {
+  font-family: "Montserrat", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", Arial, sans-serif;
+}
+
+/* Links in user messages (white text) */
+.message.user .message-bubble a {
+  color: #ffffff;
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.message.user .message-bubble a:hover {
+  opacity: 1;
+  text-decoration: none;
 }
 
 /* Message timestamp */
@@ -299,13 +372,13 @@ body::before {
 }
 
 .chat-form input:focus {
-  border-color: #007aff;
-  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.2);
+  border-color: #ff003b;
+  box-shadow: 0 2px 8px rgba(255, 0, 59, 0.2);
 }
 
-/* iOS-style send button */
+/* Red send button */
 .chat-form button {
-  background: #007aff;
+  background: #ff003b;
   color: white;
   border: none;
   border-radius: 50%;
@@ -317,7 +390,7 @@ body::before {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(255, 0, 59, 0.3);
 }
 
 .chat-form button .material-icons {
@@ -325,19 +398,19 @@ body::before {
 }
 
 .chat-form button:hover {
-  background: #0056d6;
+  background: #d81b60;
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 0, 59, 0.4);
 }
 
 .chat-form button:active {
   transform: scale(0.95);
-  box-shadow: 0 1px 4px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 1px 4px rgba(255, 0, 59, 0.3);
 }
 
 .chat-form button:focus {
   outline: none;
-  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3), 0 0 0 3px rgba(0, 122, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(255, 0, 59, 0.3), 0 0 0 3px rgba(255, 0, 59, 0.2);
 }
 
 /* visually hidden */
