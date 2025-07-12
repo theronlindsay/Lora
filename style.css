@@ -14,7 +14,7 @@ html {
 body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   color: #000000;
-  background: linear-gradient(135deg, #faf8f6 0%, #f5f2ef 50%, #ffffff 100%);
+  background: #ffffff;
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -29,9 +29,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 25% 25%, rgba(255, 0, 59, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(255, 0, 59, 0.02) 0%, transparent 50%);
+  background: transparent;
   pointer-events: none;
   z-index: -1;
 }
@@ -47,22 +45,17 @@ body::before {
 .site-header {
   text-align: center;
   padding-top: 50px;
+  padding-bottom: 50px;
   margin-bottom: 40px;
   position: relative;
+  background: #000000;
+  margin-left: -45%;
+  margin-right: -45%;
+  padding-left: 45%;
+  padding-right: 45%;
 }
 
-/* Beauty-inspired decorative elements */
-.site-header::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #ff003b, transparent);
-  opacity: 0.3;
-}
+
 
 /* L'Oréal logo styling */
 .logo {
@@ -70,23 +63,24 @@ body::before {
   height: auto;
   margin-bottom: 25px;
   transition: transform 0.3s ease, filter 0.3s ease;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+  filter: invert(1) drop-shadow(0 4px 12px rgba(255, 255, 255, 0.1));
 }
 
 .logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
+  filter: invert(1) drop-shadow(0 6px 16px rgba(255, 255, 255, 0.15));
 }
 
+/* site-title styling for black and gold theme */
 .site-title {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #000000;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
-  background: linear-gradient(45deg, #000000, #333333);
+  background: linear-gradient(45deg, #ffd700, #ffffff, #ffd700);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -101,12 +95,12 @@ body::before {
   transform: translateX(-50%);
   font-size: 12px;
   font-weight: 400;
-  color: #666666;
+  color: #ffd700;
   letter-spacing: 1px;
   white-space: nowrap;
   text-transform: none;
   background: none;
-  -webkit-text-fill-color: #666666;
+  -webkit-text-fill-color: #ffd700;
 }
 
 /* Responsive design for mobile */
@@ -133,17 +127,18 @@ body::before {
 
 /* iOS-style chat window */
 .chat-window {
-  height: 400px;
-  border: 1px solid #e5e5ea;
+  height: 60vh;
+  border: 2px solid #ffd700;
   padding: 15px;
   font-size: 16px;
   line-height: 1.4;
   overflow-y: auto;
-  background: #f2f2f7;
+  background: #ffffff;
   border-radius: 20px;
   box-shadow: 
-    0 2px 10px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    0 2px 10px rgba(255, 215, 0, 0.3),
+    0 1px 3px rgba(255, 215, 0, 0.1),
+    inset 0 1px 0 rgba(255, 215, 0, 0.1);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -158,26 +153,26 @@ body::before {
   animation: fadeInUp 0.3s ease-out;
 }
 
-/* User messages (right side, red bubbles) */
+/* User messages (right side, gold bubbles) */
 .message.user {
   align-items: flex-end;
 }
 
 .message.user .message-bubble {
-  background: #ff003b;
-  color: white;
+  background: #ffd700;
+  color: #000000;
   margin-left: 60px;
   border-radius: 18px 18px 4px 18px;
 }
 
-/* Assistant messages (left side, gray bubbles) */
+/* Assistant messages (left side, white bubbles) */
 .message.assistant {
   align-items: flex-start;
 }
 
 .message.assistant .message-bubble {
-  background: #e9e9eb;
-  color: #000;
+  background: #ffffff;
+  color: #000000;
   margin-right: 60px;
   border-radius: 18px 18px 18px 4px;
 }
@@ -195,46 +190,49 @@ body::before {
 
 /* Rich text formatting within message bubbles */
 .message-bubble a {
-  color: #ff003b;
+  color: #000000;
   text-decoration: underline;
   transition: color 0.2s ease;
 }
 
 .message-bubble a:hover {
-  color: #d81b60;
+  color: #333333;
   text-decoration: none;
 }
 
 /* Special styling for product links */
 .message-bubble a.product-link {
-  background: linear-gradient(135deg, #ff003b 0%, #e91e63 100%);
-  color: white;
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  color: #ffffff;
   padding: 2px 6px;
   border-radius: 4px;
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
   margin: 1px 2px;
-  box-shadow: 0 2px 4px rgba(255, 0, 59, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
 }
 
 .message-bubble a.product-link:hover {
-  background: linear-gradient(135deg, #e91e63 0%, #ff003b 100%);
+  background: linear-gradient(135deg, #333333 0%, #000000 100%);
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(255, 0, 59, 0.4);
-  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
 }
 
 /* Product links in user messages */
 .message.user .message-bubble a.product-link {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.3) 100%);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-weight: 500;
 }
 
 .message.user .message-bubble a.product-link:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 1) 100%);
   transform: translateY(-1px);
+  color: #ffffff;
 }
 
 /* Bold text styling */
@@ -254,16 +252,18 @@ body::before {
   font-family: "Montserrat", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", Arial, sans-serif;
 }
 
-/* Links in user messages (white text) */
+/* Links in user messages (black text on gold background) */
 .message.user .message-bubble a {
-  color: #ffffff;
+  color: #000000;
   text-decoration: underline;
-  opacity: 0.9;
+  opacity: 0.8;
+  font-weight: 500;
 }
 
 .message.user .message-bubble a:hover {
   opacity: 1;
   text-decoration: none;
+  color: #000000;
 }
 
 /* Message timestamp */
@@ -278,7 +278,7 @@ body::before {
 
 /* Typing indicator */
 .typing-indicator .message-bubble {
-  background: #e9e9eb;
+  background: #ffffff;
   padding: 16px 20px;
   border-radius: 18px 18px 18px 4px;
   margin-right: 60px;
@@ -295,7 +295,7 @@ body::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #8e8e93;
+  background: #000000;
   animation: typingDots 1.4s infinite;
 }
 
@@ -357,29 +357,30 @@ body::before {
 .chat-form input {
   flex: 1;
   padding: 12px 16px;
-  border: 1px solid #d1d1d6;
+  border: 2px solid #ffd700;
   border-radius: 20px;
   font-size: 16px;
   font-family: inherit;
-  background: white;
+  background: #ffffff;
+  color: #000000;
   transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(255, 215, 0, 0.3);
   outline: none;
 }
 
 .chat-form input::placeholder {
-  color: #8e8e93;
+  color: #666666;
 }
 
 .chat-form input:focus {
-  border-color: #ff003b;
-  box-shadow: 0 2px 8px rgba(255, 0, 59, 0.2);
+  border-color: #ffd700;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4), 0 0 0 2px rgba(255, 215, 0, 0.2);
 }
 
-/* Red send button */
+/* Gold send button */
 .chat-form button {
-  background: #ff003b;
-  color: white;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #000000;
   border: none;
   border-radius: 50%;
   padding: 0;
@@ -390,7 +391,7 @@ body::before {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(255, 0, 59, 0.3);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4), 0 0 0 1px #ffd700;
 }
 
 .chat-form button .material-icons {
@@ -398,9 +399,9 @@ body::before {
 }
 
 .chat-form button:hover {
-  background: #d81b60;
+  background: linear-gradient(135deg, #ffed4e 0%, #ffd700 100%);
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(255, 0, 59, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6), 0 0 0 2px rgba(255, 215, 0, 0.3);
 }
 
 .chat-form button:active {
@@ -410,7 +411,7 @@ body::before {
 
 .chat-form button:focus {
   outline: none;
-  box-shadow: 0 2px 8px rgba(255, 0, 59, 0.3), 0 0 0 3px rgba(255, 0, 59, 0.2);
+  box-shadow: 0 2px 8px rgba(255, 0, 59, 0.3), 0 0 0 3px rgba(255, 215, 0, 0.3);
 }
 
 /* visually hidden */
@@ -428,34 +429,24 @@ body::before {
 
 /* footer */
 .site-footer {
-  margin: 60px 0 40px;
+  margin: 60px 0 0px;
   text-align: center;
   font-size: 14px;
-  color: #666666;
-  border-top: 1px solid rgba(255, 0, 59, 0.1);
+  color: #cccccc;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
   padding-top: 40px;
+  padding-bottom: 40px;
   position: relative;
-}
-
-/* Beauty-inspired footer decoration */
-.site-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #ff003b, transparent);
-}
-
-.site-footer nav {
-  margin-top: 16px;
+  background: #000000;
+  margin-left: -45%;
+  margin-right: -45%;
+  padding-left: 45%;
+  padding-right: 45%;
 }
 
 .site-footer a {
   margin: 0 12px;
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
@@ -469,7 +460,7 @@ body::before {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #ff003b, #d81b60);
+  background: linear-gradient(90deg, #ffd700, #ff003b, #ffd700);
   transition: width 0.3s ease;
 }
 
@@ -528,25 +519,26 @@ body::before {
 
 /* Pulse animation for focus states */
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 0, 59, 0.4); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 217, 0, 0.4); }
   70% { box-shadow: 0 0 0 10px rgba(255, 0, 59, 0); }
   100% { box-shadow: 0 0 0 0 rgba(255, 0, 59, 0); }
 }
 
 /* Enhanced hover effects */
 .chat-form button:hover {
-  background: linear-gradient(135deg, #d81b60 0%, #ff003b 100%);
+  background: linear-gradient(80deg, gold 0%, black 100%);
   transform: translateY(-2px) scale(1.05);
   box-shadow: 
     0 6px 24px rgba(255, 0, 59, 0.4),
-    0 4px 12px rgba(0, 0, 0, 0.15);
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 0 0 2px rgba(255, 215, 0, 0.3);
   animation: pulse 2s infinite;
 }
 
 /* Additional responsive improvements */
 @media (max-width: 768px) {
   .chat-window {
-    height: 350px;
+    height: 60vh;
     padding: 20px;
     border-radius: 16px;
   }

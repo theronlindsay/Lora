@@ -177,7 +177,7 @@ chatForm.addEventListener("submit", async (e) => {
       body: JSON.stringify({
         prompt: {
           id: modelString,
-          version: "6"
+          version: "11"
         },
         messages: messageLedger,
         tools: [ { type: "web_search_preview" } ],
