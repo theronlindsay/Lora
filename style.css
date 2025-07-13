@@ -8,6 +8,7 @@
 /* Add smooth scrolling and premium feel */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* —— body + fonts —— */
@@ -19,6 +20,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Beauty-inspired background pattern */
@@ -39,6 +41,7 @@ body::before {
   max-width: 900px;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 /* header */
@@ -59,7 +62,7 @@ body::before {
 
 /* L'Oréal logo styling */
 .logo {
-  max-width: 220px;
+  max-width: 280px;
   height: auto;
   margin-bottom: 25px;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -128,17 +131,14 @@ body::before {
 /* iOS-style chat window */
 .chat-window {
   height: 60vh;
-  border: 2px solid #ffd700;
+  border: 2px solid black;
   padding: 15px;
   font-size: 16px;
   line-height: 1.4;
   overflow-y: auto;
   background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 
-    0 2px 10px rgba(255, 215, 0, 0.3),
-    0 1px 3px rgba(255, 215, 0, 0.1),
-    inset 0 1px 0 rgba(255, 215, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -159,10 +159,11 @@ body::before {
 }
 
 .message.user .message-bubble {
-  background: #ffd700;
-  color: #000000;
+  background: #e91e63;
+  color: #ffffff;
   margin-left: 60px;
-  border-radius: 18px 18px 4px 18px;
+  border-radius: 8px 8px 3px 8px;
+  border: 1px solid #666666;
 }
 
 /* Assistant messages (left side, white bubbles) */
@@ -174,7 +175,8 @@ body::before {
   background: #ffffff;
   color: #000000;
   margin-right: 60px;
-  border-radius: 18px 18px 18px 4px;
+  border-radius: 8px 8px 8px 3px;
+  border: 1px solid #666666;
 }
 
 /* Message bubble styling */
@@ -252,18 +254,18 @@ body::before {
   font-family: "Montserrat", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", Arial, sans-serif;
 }
 
-/* Links in user messages (black text on gold background) */
+/* Links in user messages (white text on pinkish red background) */
 .message.user .message-bubble a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: underline;
-  opacity: 0.8;
+  opacity: 0.9;
   font-weight: 500;
 }
 
 .message.user .message-bubble a:hover {
   opacity: 1;
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
 }
 
 /* Message timestamp */
@@ -280,8 +282,9 @@ body::before {
 .typing-indicator .message-bubble {
   background: #ffffff;
   padding: 16px 20px;
-  border-radius: 18px 18px 18px 4px;
+  border-radius: 8px 8px 8px 3px;
   margin-right: 60px;
+  border: 1px solid #666666;
 }
 
 .typing-dots {
@@ -337,7 +340,7 @@ body::before {
 
 .chat-window::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 4px;
   transition: background 0.3s ease;
 }
 
@@ -357,14 +360,14 @@ body::before {
 .chat-form input {
   flex: 1;
   padding: 12px 16px;
-  border: 2px solid #ffd700;
-  border-radius: 20px;
+  border: 2px solid black;
+  border-radius: 8px;
   font-size: 16px;
   font-family: inherit;
   background: #ffffff;
   color: #000000;
   transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   outline: none;
 }
 
@@ -373,14 +376,14 @@ body::before {
 }
 
 .chat-form input:focus {
-  border-color: #ffd700;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4), 0 0 0 2px rgba(255, 215, 0, 0.2);
+  border-color: #e91e63;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3), 0 0 0 2px rgba(233, 30, 99, 0.1);
 }
 
-/* Gold send button */
+/* Black send button */
 .chat-form button {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  color: #000000;
+  background: #000000;
+  color: #ffffff;
   border: none;
   border-radius: 50%;
   padding: 0;
@@ -391,7 +394,7 @@ body::before {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4), 0 0 0 1px #ffd700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .chat-form button .material-icons {
@@ -399,19 +402,19 @@ body::before {
 }
 
 .chat-form button:hover {
-  background: linear-gradient(135deg, #ffed4e 0%, #ffd700 100%);
+  background: #333333;
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6), 0 0 0 2px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .chat-form button:active {
   transform: scale(0.95);
-  box-shadow: 0 1px 4px rgba(255, 0, 59, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .chat-form button:focus {
   outline: none;
-  box-shadow: 0 2px 8px rgba(255, 0, 59, 0.3), 0 0 0 3px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 /* visually hidden */
@@ -526,13 +529,11 @@ body::before {
 
 /* Enhanced hover effects */
 .chat-form button:hover {
-  background: linear-gradient(80deg, gold 0%, black 100%);
+  background: #333333;
   transform: translateY(-2px) scale(1.05);
   box-shadow: 
-    0 6px 24px rgba(255, 0, 59, 0.4),
-    0 4px 12px rgba(0, 0, 0, 0.15),
-    0 0 0 2px rgba(255, 215, 0, 0.3);
-  animation: pulse 2s infinite;
+    0 6px 24px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Additional responsive improvements */
@@ -540,7 +541,7 @@ body::before {
   .chat-window {
     height: 60vh;
     padding: 20px;
-    border-radius: 16px;
+    border-radius: 8px;
   }
   
   .chat-form {
